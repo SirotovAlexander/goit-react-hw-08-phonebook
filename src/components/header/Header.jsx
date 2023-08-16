@@ -8,8 +8,14 @@ export const Header = () => {
         <NavLink className={css.header__navlink} to="/">
           Home
         </NavLink>
+        <NavLink className={css.header__navlink} to="/">
+          Login
+        </NavLink>
         <NavLink className={css.header__navlink} to="/movies">
-          Movies
+          Register
+        </NavLink>
+        <NavLink className={css.header__navlink} to="/contacts">
+          Contacts
         </NavLink>
       </nav>
     </header>

@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import { Main } from 'pages/Main';
+import { WelcomePage } from 'pages/WelcomePage';
 import { ContactsPage } from 'pages/Contacts';
+import { ErrorPage } from 'pages/ErrorPage';
 // import Notiflix from 'notiflix';
 // import { Container } from './container/Container';
 // import { Section } from './section/Section';
@@ -39,7 +41,9 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Main />}>
-        <Route index element={<ContactsPage />} />
+        <Route index element={<WelcomePage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
   );
