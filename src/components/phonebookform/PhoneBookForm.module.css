@@ -1,0 +1,47 @@
+.formwrapper {
+  min-height: 200px;
+}
+
+.useagecard {
+  display: flex;
+  width: 100%;
+  max-height: 200px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.useagecard__lable {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.useagecard__input {
+  height: 30px;
+  border: 1px solid antiquewhite;
+  border-radius: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: antiquewhite;
+}
+
+.useagecard__input:hover {
+  border-color: rgb(193, 243, 113);
+}
+.useagecard__input:focus {
+  outline: 1px solid rgb(193, 243, 113);
+}
+
+.useagecard__button {
+  display: block;
+  height: 40px;
+  width: 100px;
+  border: 1px solid rgb(193, 243, 113);
+  border-radius: 8px;
+  background-color: rgb(193, 243, 113);
+  color: #111;
+}
+.useagecard__button:hover {
+  border: 1px solid rgb(193, 243, 113);
+  background-color: rgb(255, 255, 255);
+  color: #111;
+}
