@@ -1,14 +1,14 @@
 import { Container } from 'components/container/Container';
-import { Section } from 'components/section/Section';
+import css from './WelcomePage.module.css';
 
 export const WelcomePage = () => {
   return (
     <Container>
-      <Section>
+      <div className={css.welcome_wrapper}>
         <h1>Welcome</h1>
-        <p>There is you privet PhoneBook</p>
-        <p>Please Login or Register</p>
-      </Section>
+        <p className={css.text__style}>There is your privet PhoneBook</p>
+        <p className={css.text__style}>Please Login or Register</p>
+      </div>
     </Container>
   );
 };
