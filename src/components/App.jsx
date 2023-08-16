@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Main } from 'pages/Main';
 import { WelcomePage } from 'pages/WelcomePage';
+import { Login } from 'pages/Login';
 import { ContactsPage } from 'pages/Contacts';
 import { ErrorPage } from 'pages/ErrorPage';
 // import Notiflix from 'notiflix';
@@ -42,7 +43,8 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Main />}>
         <Route index element={<WelcomePage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="login" element={<Login />} />
+        <Route path="contacts" element={<ContactsPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
