@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { UserMenu } from 'components/usermenu/UserMenu';
 import css from './Header.module.css';
 
 export const Header = () => {
@@ -18,6 +19,7 @@ export const Header = () => {
           Contacts
         </NavLink>
       </nav>
+      <UserMenu />
     </header>
   );
 };
