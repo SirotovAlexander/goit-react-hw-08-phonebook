@@ -5,6 +5,7 @@ import { Login } from 'pages/Login';
 import { Register } from 'pages/Register';
 import { ContactsPage } from 'pages/Contacts';
 import { ErrorPage } from 'pages/ErrorPage';
+import { PrivateRoute } from './PrivateRoute';
 // import Notiflix from 'notiflix';
 // import { Container } from './container/Container';
 // import { Section } from './section/Section';
@@ -46,7 +47,10 @@ export const App = () => {
         <Route index element={<WelcomePage />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="contacts" element={<ContactsPage />} />
+        <Route
+          path="contacts"
+          element={<PrivateRoute component={<ContactsPage />} />}
+        />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
