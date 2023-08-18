@@ -8,7 +8,6 @@ import { ErrorPage } from 'pages/ErrorPage';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 
-// import Notiflix from 'notiflix';
 // import { Container } from './container/Container';
 // import { Section } from './section/Section';
 // import { Loader } from './Loader/Loader';
