@@ -8,7 +8,6 @@ import { Navigate } from 'react-router-dom';
  */
 
 export const PrivateRoute = component => {
-  console.log(component);
   const isLoggedIn = useSelector(selectIsLogged);
   const isRefreshing = useSelector(selectIsRefreshing);
   const shouldRedirect = !isLoggedIn && !isRefreshing;
