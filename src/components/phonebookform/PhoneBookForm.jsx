@@ -17,7 +17,7 @@ const PhoneBookForm = () => {
     if (event.currentTarget.name)
       newContact.name = event.currentTarget.name.value;
     if (event.currentTarget.number) {
-      newContact.phone = event.currentTarget.number.value;
+      newContact.number = event.currentTarget.number.value;
     }
     if (!Number(event.currentTarget.number.value)) {
       Notiflix.Notify.warning('Please add valid number value');
@@ -27,12 +27,12 @@ const PhoneBookForm = () => {
     const checkList = contacts.find(contact => {
       return (
         contact.name.toLowerCase() === newContact.name.toLowerCase() ||
-        contact.phone === newContact.phone
+        contact.number === newContact.number
       );
     });
     if (checkList) {
-      alert(
-        `${newContact.name}, number: ${newContact.phone} is already in contacts !`
+      Notiflix.Notify.warning(
+        `${newContact.name}, number: ${newContact.number} is already in contacts !`
       );
       event.currentTarget.reset();
       return;
