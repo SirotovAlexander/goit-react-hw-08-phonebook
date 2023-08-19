@@ -12,8 +12,8 @@ export const Modal = ({ closemodal, id }) => {
 
     updateContact.name = form.name.value;
     updateContact.number = form.number.value;
-    console.log(updateContact);
-    // dispatch(updateContacts(id, updateContact));
+
+    dispatch(updateContacts([id, updateContact]));
 
     event.currentTarget.reset();
     closemodal();
