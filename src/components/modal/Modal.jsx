@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import { useDispatch } from 'react-redux';
 import { updateContacts } from 'Redux/operations';
 import css from './Modal.module.css';
@@ -10,8 +11,13 @@ export const Modal = ({ closemodal, id }) => {
     const form = event.currentTarget;
     const updateContact = {};
 
-    updateContact.name = form.name.value;
-    updateContact.number = form.number.value;
+    if (form.name.value !== '') updateContact.name = form.name.value;
+    if (form.number.value !== '') updateContact.number = form.number.value;
+
+    if (!Number(updateContact.number)) {
+      Notiflix.Notify.warning('Please add valid number value');
+      return;
+    }
 
     dispatch(updateContacts([id, updateContact]));
 
