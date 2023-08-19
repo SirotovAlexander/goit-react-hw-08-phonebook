@@ -31,6 +31,12 @@ export const handleRegisterUserFulfilled = (state, action) => {
   state.isLoggedIn = true;
 };
 
+export const handleLogInFulfilled = (state, action) => {
+  state.user = action.payload.user;
+  state.token = action.payload.token;
+  state.isLoggedIn = true;
+};
+
 export const handleLogOutFulfilled = (state, action) => {
   state.user = { name: null, email: null };
   state.token = null;

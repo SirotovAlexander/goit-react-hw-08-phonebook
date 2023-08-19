@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { registerUser, logOutUser } from 'Redux/operations';
+import { registerUser, logInUser, logOutUser } from 'Redux/operations';
 import {
   handleRegisterUserFulfilled,
+  handleLogInFulfilled,
   handleLogOutFulfilled,
 } from 'Redux/handlers';
 const initialState = {
@@ -17,6 +18,7 @@ const authSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(registerUser.fulfilled, handleRegisterUserFulfilled)
+      .addCase(logInUser.fulfilled, handleLogInFulfilled)
       .addCase(logOutUser.fulfilled, handleLogOutFulfilled);
   },
 });
