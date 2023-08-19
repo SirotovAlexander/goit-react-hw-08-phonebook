@@ -8,10 +8,9 @@ const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-// Utility to remove JWT
-// const clearAuthHeader = () => {
-//   axios.defaults.headers.common.Authorization = '';
-// };
+const clearAuthHeader = () => {
+  axios.defaults.headers.common.Authorization = '';
+};
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -67,6 +66,18 @@ export const registerUser = createAsyncThunk(
       Notiflix.Notify.warning(
         `Something wrong. ${error.message}. Maybe this eMail already used`
       );
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logOutUser = createAsyncThunk(
+  'logOut/registerUser',
+  async (_, thunkAPI) => {
+    try {
+      await axios.post('/users/logout');
+      clearAuthHeader();
+    } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
