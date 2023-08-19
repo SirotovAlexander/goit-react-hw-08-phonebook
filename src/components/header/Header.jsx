@@ -11,11 +11,10 @@ export const Header = () => {
   return (
     <header className={css.header__wrapper}>
       <nav className={css.header__navigation}>
-        {!isLogged && (
-          <NavLink className={css.header__navlink} to="/">
-            Home
-          </NavLink>
-        )}
+        <NavLink className={css.header__navlink} to="/">
+          Home
+        </NavLink>
+
         {!isLogged && (
           <NavLink className={css.header__navlink} to="/login">
             Login
