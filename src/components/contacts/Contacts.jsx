@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
@@ -18,7 +18,11 @@ const Contacts = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const openModal = () => {
+  const idRef = useRef('');
+
+  const openModal = event => {
+    idRef.current = event.target.value;
+
     setModal(true);
   };
 
@@ -37,6 +41,7 @@ const Contacts = () => {
               </p>
               <button
                 type="button"
+                value={id}
                 className={css.list__button}
                 onClick={openModal}
               >
@@ -53,7 +58,7 @@ const Contacts = () => {
           );
         })}
       </ul>
-      {modal && <Modal closemodal={closeModal} />}
+      {modal && <Modal closemodal={closeModal} id={idRef.current} />}
     </div>
   );
 };

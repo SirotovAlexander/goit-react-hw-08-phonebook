@@ -1,12 +1,29 @@
+import { useDispatch } from 'react-redux';
+import { updateContacts } from 'Redux/operations';
 import css from './Modal.module.css';
 
-export const Modal = ({ closemodal }) => {
+export const Modal = ({ closemodal, id }) => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const updateContact = {};
+
+    updateContact.name = form.name.value;
+    updateContact.number = form.number.value;
+    console.log(updateContact);
+    // dispatch(updateContacts(id, updateContact));
+
+    event.currentTarget.reset();
+    closemodal();
+  };
+
   const handleBackdropClick = event => {
     if (event.currentTarget === event.target) {
       closemodal();
     }
   };
-
   return (
     <div className={css.Modal__backdrop} onClick={handleBackdropClick}>
       <div className={css.Modal__content}>
@@ -17,7 +34,7 @@ export const Modal = ({ closemodal }) => {
         >
           close
         </button>
-        <form className={css.useagecard}>
+        <form className={css.useagecard} onSubmit={handleSubmit}>
           <label className={css.useagecard__lable}>Name</label>
           <input
             className={css.useagecard__input}

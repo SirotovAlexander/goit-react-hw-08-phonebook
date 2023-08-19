@@ -25,6 +25,12 @@ export const handleDellFulfilled = (state, action) => {
   state.error = null;
 };
 
+export const handleUpdateFulfilled = (state, action) => {
+  // state.items = state.items.filter(item => item.id === action.payload.id);
+  state.loading = false;
+  state.error = null;
+};
+
 export const handleRegisterUserFulfilled = (state, action) => {
   state.user = action.payload.user;
   state.token = action.payload.token;

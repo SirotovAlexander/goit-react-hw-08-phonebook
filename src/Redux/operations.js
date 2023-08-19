@@ -48,6 +48,19 @@ export const deleteContacts = createAsyncThunk(
   }
 );
 
+export const updateContacts = createAsyncThunk(
+  'contacts/updateContacts',
+  async (id, contact, thunkAPI) => {
+    try {
+      const response = await axios.patch(`/contacts/${id}`, contact);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async (contact, thunkAPI) => {
