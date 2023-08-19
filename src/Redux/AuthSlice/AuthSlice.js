@@ -1,9 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { registerUser, logInUser, logOutUser } from 'Redux/operations';
+import {
+  registerUser,
+  logInUser,
+  logOutUser,
+  getCurrentUser,
+} from 'Redux/operations';
 import {
   handleRegisterUserFulfilled,
   handleLogInFulfilled,
   handleLogOutFulfilled,
+  handleGetCurrentPending,
+  handleGetCurrentFulfilled,
+  handleGetCurrentRejected,
 } from 'Redux/handlers';
 const initialState = {
   user: { name: null, email: null },
@@ -19,7 +27,10 @@ const authSlice = createSlice({
     builder
       .addCase(registerUser.fulfilled, handleRegisterUserFulfilled)
       .addCase(logInUser.fulfilled, handleLogInFulfilled)
-      .addCase(logOutUser.fulfilled, handleLogOutFulfilled);
+      .addCase(logOutUser.fulfilled, handleLogOutFulfilled)
+      .addCase(getCurrentUser.pending, handleGetCurrentPending)
+      .addCase(getCurrentUser.fulfilled, handleGetCurrentFulfilled)
+      .addCase(getCurrentUser.rejected, handleGetCurrentRejected);
   },
 });
 

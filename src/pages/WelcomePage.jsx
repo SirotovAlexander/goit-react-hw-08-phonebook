@@ -12,7 +12,7 @@ export const WelcomePage = () => {
         <h1>Welcome</h1>
         {isLogged ? (
           <>
-            <p>{userName.name}</p>
+            <p className={css.text__style}>{userName.name}</p>
             <p className={css.text__style}>You already is Logged In</p>
           </>
         ) : (

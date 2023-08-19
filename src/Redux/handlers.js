@@ -42,3 +42,17 @@ export const handleLogOutFulfilled = (state, action) => {
   state.token = null;
   state.isLoggedIn = false;
 };
+
+export const handleGetCurrentPending = (state, action) => {
+  state.isRefreshing = true;
+};
+
+export const handleGetCurrentFulfilled = (state, action) => {
+  state.user = action.payload;
+  state.isLoggedIn = true;
+  state.isRefreshing = false;
+};
+
+export const handleGetCurrentRejected = (state, action) => {
+  state.isRefreshing = false;
+};
