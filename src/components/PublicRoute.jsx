@@ -10,5 +10,5 @@ import { Navigate } from 'react-router-dom';
 export const PublicRoute = component => {
   const isLogged = useSelector(selectIsLogged);
 
-  return isLogged ? <Navigate to="contacts" /> : component.component;
+  return isLogged ? <Navigate to="/contacts" /> : component.component;
 };
