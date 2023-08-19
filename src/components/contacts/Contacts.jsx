@@ -19,11 +19,11 @@ const Contacts = () => {
   return (
     <div>
       <ul>
-        {contacts?.map(({ id, name, phone }) => {
+        {contacts?.map(({ id, name, number }) => {
           return (
             <li key={id} className={css.list__item}>
               <p className={css.text__container}>
-                {name} {phone}
+                {name} {number}
               </p>
               <button className={css.list__button}>update</button>
               <button
