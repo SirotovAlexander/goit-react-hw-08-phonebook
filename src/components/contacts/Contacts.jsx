@@ -1,20 +1,30 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 import { selectVisibleContacts } from '../../Redux/selectors';
 import { fetchContacts, deleteContacts } from 'Redux/operations';
 
+import { Modal } from 'components/modal/Modal';
+
 import css from './Contacts.module.css';
 
 const Contacts = () => {
   const dispatch = useDispatch();
-
+  const [modal, setModal] = useState(false);
   const contacts = useSelector(selectVisibleContacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
+
+  const openModal = () => {
+    setModal(true);
+  };
+
+  const closeModal = () => {
+    setModal(false);
+  };
 
   return (
     <div>
@@ -25,7 +35,11 @@ const Contacts = () => {
               <p className={css.text__container}>
                 {name} {number}
               </p>
-              <button type="button" className={css.list__button}>
+              <button
+                type="button"
+                className={css.list__button}
+                onClick={openModal}
+              >
                 update
               </button>
               <button
@@ -39,6 +53,7 @@ const Contacts = () => {
           );
         })}
       </ul>
+      {modal && <Modal closemodal={closeModal} />}
     </div>
   );
 };
