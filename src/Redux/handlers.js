@@ -24,3 +24,9 @@ export const handleDellFulfilled = (state, action) => {
   state.loading = false;
   state.error = null;
 };
+
+export const handleRegisterUserFulfilled = (state, action) => {
+  state.user = action.payload.user;
+  state.token = action.payload.token;
+  state.isLoggedIn = true;
+};

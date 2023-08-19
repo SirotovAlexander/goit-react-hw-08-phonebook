@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { addContacts } from 'Redux/operations';
@@ -19,7 +20,7 @@ const PhoneBookForm = () => {
       newContact.phone = event.currentTarget.number.value;
     }
     if (!Number(event.currentTarget.number.value)) {
-      alert('Please add valid number value');
+      Notiflix.Notify.warning('Please add valid number value');
       return;
     }
 
