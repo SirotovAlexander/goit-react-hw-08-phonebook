@@ -2,11 +2,22 @@ import PropTypes from 'prop-types';
 import Notiflix from 'notiflix';
 import { useDispatch } from 'react-redux';
 import { updateContacts } from 'Redux/operations';
+// import { createPortal } from 'react-dom';
 import css from './Modal.module.css';
+
+// const modalRoot = document.querySelector('#modal-root');
 
 export const Modal = ({ closemodal, id }) => {
   const dispatch = useDispatch();
 
+  window.addEventListener('keydown', handleKeyDown);
+
+  function handleKeyDown(event) {
+    if (event.code === 'Escape') {
+      window.removeEventListener('keydown', handleKeyDown);
+      closemodal();
+    }
+  }
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.currentTarget;
