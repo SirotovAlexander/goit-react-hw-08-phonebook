@@ -19,3 +19,7 @@
   background-color: rgb(233, 9, 9);
   color: #ffffff;
 }
+
+.text__container {
+  width: 100px;
+}

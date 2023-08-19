@@ -22,7 +22,7 @@ const Contacts = () => {
         {contacts?.map(({ id, name, phone }) => {
           return (
             <li key={id} className={css.list__item}>
-              <p>
+              <p className={css.text__container}>
                 {name} {phone}
               </p>
               <button className={css.list__button}>update</button>
