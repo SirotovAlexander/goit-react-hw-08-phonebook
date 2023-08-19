@@ -25,8 +25,11 @@ const Contacts = () => {
               <p className={css.text__container}>
                 {name} {number}
               </p>
-              <button className={css.list__button}>update</button>
+              <button type="button" className={css.list__button}>
+                update
+              </button>
               <button
+                type="button"
                 className={css.list__button}
                 onClick={() => dispatch(deleteContacts(id))}
               >
