@@ -25,6 +25,7 @@ const Contacts = () => {
               <p>
                 {name} {phone}
               </p>
+              <button className={css.list__button}>update</button>
               <button
                 className={css.list__button}
                 onClick={() => dispatch(deleteContacts(id))}
