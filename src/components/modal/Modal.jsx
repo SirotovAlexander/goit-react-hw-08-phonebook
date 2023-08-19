@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Notiflix from 'notiflix';
 import { useDispatch } from 'react-redux';
 import { updateContacts } from 'Redux/operations';
@@ -66,4 +67,9 @@ export const Modal = ({ closemodal, id }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  closemodal: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
