@@ -4,7 +4,7 @@ import { Container } from 'components/container/Container';
 
 import css from './Login.module.css';
 
-export const Login = () => {
+const Login = () => {
   const dispatch = useDispatch();
 
   const hendleSubmite = event => {
@@ -51,3 +51,5 @@ export const Login = () => {
     </Container>
   );
 };
+
+export default Login;

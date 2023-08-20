@@ -3,7 +3,7 @@ import { selectIsLogged, selectUser } from 'Redux/selectors';
 import { Container } from 'components/container/Container';
 import css from './WelcomePage.module.css';
 
-export const WelcomePage = () => {
+const WelcomePage = () => {
   const isLogged = useSelector(selectIsLogged);
   const userName = useSelector(selectUser);
   return (
@@ -25,3 +25,5 @@ export const WelcomePage = () => {
     </Container>
   );
 };
+
+export default WelcomePage;

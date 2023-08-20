@@ -5,7 +5,7 @@ import { Container } from 'components/container/Container';
 
 import css from './Register.module.css';
 
-export const Register = () => {
+const Register = () => {
   const dispatch = useDispatch();
 
   const hendleSubmite = event => {
@@ -67,3 +67,5 @@ export const Register = () => {
     </Container>
   );
 };
+
+export default Register;

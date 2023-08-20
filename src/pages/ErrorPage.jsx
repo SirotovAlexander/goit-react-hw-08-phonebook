@@ -1,6 +1,6 @@
 import css from './ErrorPage.module.css';
 
-export const ErrorPage = () => {
+const ErrorPage = () => {
   return (
     <div id={css.main}>
       <div className={css.fof}>
@@ -9,3 +9,5 @@ export const ErrorPage = () => {
     </div>
   );
 };
+
+export default ErrorPage;

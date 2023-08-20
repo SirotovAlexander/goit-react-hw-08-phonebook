@@ -9,7 +9,7 @@ import Filter from '../components/filter/Filter';
 import { useSelector } from 'react-redux';
 import { selectLoading, selectError } from '../Redux/selectors';
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
 
@@ -32,3 +32,5 @@ export const ContactsPage = () => {
     </Container>
   );
 };
+
+export default ContactsPage;
